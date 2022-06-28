@@ -35,7 +35,7 @@
 		DBFCE27F285F9B5C00AE1D06 /* MyGBShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE27E285F9B5C00AE1D06 /* MyGBShopUITests.swift */; };
 		DBFCE29A285F9CF100AE1D06 /* test.s in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE299285F9CF100AE1D06 /* test.s */; };
 		DBFCE29C285F9D0D00AE1D06 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE29B285F9D0D00AE1D06 /* Data+PrettyJSON.swift */; };
-/* End PBXBuildFile section */
+/*End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DBFCE270285F9B5C00AE1D06 /* PBXContainerItemProxy */ = {
