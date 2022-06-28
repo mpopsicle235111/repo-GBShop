@@ -3,10 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBBAD0B72863B83900242D6D /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0B62863B83900242D6D /* Auth.swift */; };
+		DBBAD0BA2863B88200242D6D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DBBAD0B92863B88200242D6D /* Alamofire */; };
+		DBBAD0BC2863B9A300242D6D /* AuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0BB2863B9A300242D6D /* AuthRequestFactory.swift */; };
+		DBBAD0BF2863B9FE00242D6D /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0BE2863B9FE00242D6D /* Registration.swift */; };
+		DBBAD0C12863BAF200242D6D /* RegistrationRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0C02863BAF200242D6D /* RegistrationRequestFactory.swift */; };
+		DBBAD0C42863BB4F00242D6D /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0C32863BB4F00242D6D /* RequestFactory.swift */; };
+		DBBAD0C72863BC1E00242D6D /* ChangeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0C62863BC1E00242D6D /* ChangeUserData.swift */; };
+		DBBAD0C92863BCEE00242D6D /* ChangeUserDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0C82863BCEE00242D6D /* ChangeUserDataRequestFactory.swift */; };
+		DBBAD0CB2863BD3500242D6D /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0CA2863BD3500242D6D /* LoginResult.swift */; };
+		DBBAD0CD2863BD6C00242D6D /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0CC2863BD6C00242D6D /* LogoutResult.swift */; };
+		DBBAD0CF2863BD9400242D6D /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0CE2863BD9400242D6D /* RegistrationResult.swift */; };
+		DBBAD0D12863BDC700242D6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0D02863BDC700242D6D /* User.swift */; };
+		DBBAD0D32863BE3E00242D6D /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0D22863BE3E00242D6D /* ChangeUserDataResult.swift */; };
+		DBBAD0D52863BE8100242D6D /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0D42863BE8100242D6D /* AbstractRequestFactory.swift */; };
+		DBBAD0D82863BF1500242D6D /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0D72863BF1500242D6D /* AbstractErrorParser.swift */; };
+		DBBAD0DA2863BF4300242D6D /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0D92863BF4300242D6D /* ErrorParser.swift */; };
+		DBBAD0DC2863BF7500242D6D /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0DB2863BF7500242D6D /* ResponseCodable.swift */; };
+		DBBAD0DF2863BFED00242D6D /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0DE2863BFED00242D6D /* RequestRouter.swift */; };
 		DBFCE25D285F9B5800AE1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE25C285F9B5800AE1D06 /* AppDelegate.swift */; };
 		DBFCE25F285F9B5800AE1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE25E285F9B5800AE1D06 /* SceneDelegate.swift */; };
 		DBFCE261285F9B5800AE1D06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE260285F9B5800AE1D06 /* ContentView.swift */; };
@@ -15,11 +33,9 @@
 		DBFCE269285F9B5C00AE1D06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFCE267285F9B5C00AE1D06 /* LaunchScreen.storyboard */; };
 		DBFCE274285F9B5C00AE1D06 /* MyGBShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE273285F9B5C00AE1D06 /* MyGBShopTests.swift */; };
 		DBFCE27F285F9B5C00AE1D06 /* MyGBShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE27E285F9B5C00AE1D06 /* MyGBShopUITests.swift */; };
-		DBFCE296285F9C7C00AE1D06 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE295285F9C7C00AE1D06 /* Session.swift */; };
-		DBFCE298285F9CA100AE1D06 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE297285F9CA100AE1D06 /* Customer.swift */; };
 		DBFCE29A285F9CF100AE1D06 /* test.s in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE299285F9CF100AE1D06 /* test.s */; };
 		DBFCE29C285F9D0D00AE1D06 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE29B285F9D0D00AE1D06 /* Data+PrettyJSON.swift */; };
-/* End PBXBuildFile section */
+/*End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DBFCE270285F9B5C00AE1D06 /* PBXContainerItemProxy */ = {
@@ -39,6 +55,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DBBAD0B62863B83900242D6D /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		DBBAD0BB2863B9A300242D6D /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
+		DBBAD0BE2863B9FE00242D6D /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		DBBAD0C02863BAF200242D6D /* RegistrationRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequestFactory.swift; sourceTree = "<group>"; };
+		DBBAD0C32863BB4F00242D6D /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		DBBAD0C62863BC1E00242D6D /* ChangeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserData.swift; sourceTree = "<group>"; };
+		DBBAD0C82863BCEE00242D6D /* ChangeUserDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataRequestFactory.swift; sourceTree = "<group>"; };
+		DBBAD0CA2863BD3500242D6D /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		DBBAD0CC2863BD6C00242D6D /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
+		DBBAD0CE2863BD9400242D6D /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
+		DBBAD0D02863BDC700242D6D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DBBAD0D22863BE3E00242D6D /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
+		DBBAD0D42863BE8100242D6D /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
+		DBBAD0D72863BF1500242D6D /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
+		DBBAD0D92863BF4300242D6D /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		DBBAD0DB2863BF7500242D6D /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
+		DBBAD0DE2863BFED00242D6D /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		DBFCE259285F9B5800AE1D06 /* MyGBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFCE25C285F9B5800AE1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBFCE25E285F9B5800AE1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,8 +86,6 @@
 		DBFCE27A285F9B5C00AE1D06 /* MyGBShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGBShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFCE27E285F9B5C00AE1D06 /* MyGBShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGBShopUITests.swift; sourceTree = "<group>"; };
 		DBFCE280285F9B5C00AE1D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBFCE295285F9C7C00AE1D06 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		DBFCE297285F9CA100AE1D06 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		DBFCE299285F9CF100AE1D06 /* test.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = test.s; sourceTree = "<group>"; };
 		DBFCE29B285F9D0D00AE1D06 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBAD0BA2863B88200242D6D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +116,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DBBAD0B52863B81900242D6D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAD0B62863B83900242D6D /* Auth.swift */,
+				DBBAD0BB2863B9A300242D6D /* AuthRequestFactory.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		DBBAD0BD2863B9DC00242D6D /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAD0BE2863B9FE00242D6D /* Registration.swift */,
+				DBBAD0C02863BAF200242D6D /* RegistrationRequestFactory.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		DBBAD0C22863BB1F00242D6D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAD0C32863BB4F00242D6D /* RequestFactory.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DBBAD0C52863BBF900242D6D /* ChangeUserData */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAD0C62863BC1E00242D6D /* ChangeUserData.swift */,
+				DBBAD0C82863BCEE00242D6D /* ChangeUserDataRequestFactory.swift */,
+			);
+			path = ChangeUserData;
+			sourceTree = "<group>";
+		};
+		DBBAD0D62863BEF900242D6D /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAD0D72863BF1500242D6D /* AbstractErrorParser.swift */,
+				DBBAD0D92863BF4300242D6D /* ErrorParser.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		DBBAD0DD2863BFD400242D6D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAD0DE2863BFED00242D6D /* RequestRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		DBFCE250285F9B5800AE1D06 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +191,7 @@
 		DBFCE25B285F9B5800AE1D06 /* MyGBShop */ = {
 			isa = PBXGroup;
 			children = (
+				DBFCE26A285F9B5C00AE1D06 /* Info.plist */,
 				DBFCE28C285F9B7200AE1D06 /* App */,
 				DBFCE28D285F9B7F00AE1D06 /* Core(Extensions) */,
 				DBFCE28E285F9B9100AE1D06 /* Resources(Assets) */,
@@ -159,6 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				DBFCE29B285F9D0D00AE1D06 /* Data+PrettyJSON.swift */,
+				DBBAD0D42863BE8100242D6D /* AbstractRequestFactory.swift */,
+				DBBAD0D62863BEF900242D6D /* Error */,
+				DBBAD0DB2863BF7500242D6D /* ResponseCodable.swift */,
+				DBBAD0DD2863BFD400242D6D /* Router */,
 			);
 			path = "Core(Extensions)";
 			sourceTree = "<group>";
@@ -175,7 +264,6 @@
 		DBFCE28F285F9BA300AE1D06 /* Environments(Settings) */ = {
 			isa = PBXGroup;
 			children = (
-				DBFCE26A285F9B5C00AE1D06 /* Info.plist */,
 			);
 			path = "Environments(Settings)";
 			sourceTree = "<group>";
@@ -183,7 +271,10 @@
 		DBFCE290285F9BBA00AE1D06 /* BusinessLogic(Services) */ = {
 			isa = PBXGroup;
 			children = (
-				DBFCE295285F9C7C00AE1D06 /* Session.swift */,
+				DBBAD0B52863B81900242D6D /* Auth */,
+				DBBAD0BD2863B9DC00242D6D /* Registration */,
+				DBBAD0C22863BB1F00242D6D /* Request */,
+				DBBAD0C52863BBF900242D6D /* ChangeUserData */,
 			);
 			path = "BusinessLogic(Services)";
 			sourceTree = "<group>";
@@ -191,7 +282,11 @@
 		DBFCE291285F9BCF00AE1D06 /* Entity(Models) */ = {
 			isa = PBXGroup;
 			children = (
-				DBFCE297285F9CA100AE1D06 /* Customer.swift */,
+				DBBAD0CA2863BD3500242D6D /* LoginResult.swift */,
+				DBBAD0CC2863BD6C00242D6D /* LogoutResult.swift */,
+				DBBAD0CE2863BD9400242D6D /* RegistrationResult.swift */,
+				DBBAD0D02863BDC700242D6D /* User.swift */,
+				DBBAD0D22863BE3E00242D6D /* ChangeUserDataResult.swift */,
 			);
 			path = "Entity(Models)";
 			sourceTree = "<group>";
@@ -228,6 +323,9 @@
 			dependencies = (
 			);
 			name = MyGBShop;
+			packageProductDependencies = (
+				DBBAD0B92863B88200242D6D /* Alamofire */,
+			);
 			productName = MyGBShop;
 			productReference = DBFCE259285F9B5800AE1D06 /* MyGBShop.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +397,9 @@
 				Base,
 			);
 			mainGroup = DBFCE250285F9B5800AE1D06;
+			packageReferences = (
+				DBBAD0B82863B88200242D6D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DBFCE25A285F9B5800AE1D06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,13 +443,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBFCE296285F9C7C00AE1D06 /* Session.swift in Sources */,
-				DBFCE298285F9CA100AE1D06 /* Customer.swift in Sources */,
+				DBBAD0C92863BCEE00242D6D /* ChangeUserDataRequestFactory.swift in Sources */,
+				DBBAD0C42863BB4F00242D6D /* RequestFactory.swift in Sources */,
+				DBBAD0D32863BE3E00242D6D /* ChangeUserDataResult.swift in Sources */,
+				DBBAD0CD2863BD6C00242D6D /* LogoutResult.swift in Sources */,
 				DBFCE25D285F9B5800AE1D06 /* AppDelegate.swift in Sources */,
+				DBBAD0D12863BDC700242D6D /* User.swift in Sources */,
+				DBBAD0DF2863BFED00242D6D /* RequestRouter.swift in Sources */,
 				DBFCE29C285F9D0D00AE1D06 /* Data+PrettyJSON.swift in Sources */,
+				DBBAD0C12863BAF200242D6D /* RegistrationRequestFactory.swift in Sources */,
+				DBBAD0D82863BF1500242D6D /* AbstractErrorParser.swift in Sources */,
 				DBFCE25F285F9B5800AE1D06 /* SceneDelegate.swift in Sources */,
+				DBBAD0DC2863BF7500242D6D /* ResponseCodable.swift in Sources */,
+				DBBAD0BC2863B9A300242D6D /* AuthRequestFactory.swift in Sources */,
+				DBBAD0D52863BE8100242D6D /* AbstractRequestFactory.swift in Sources */,
+				DBBAD0CB2863BD3500242D6D /* LoginResult.swift in Sources */,
 				DBFCE261285F9B5800AE1D06 /* ContentView.swift in Sources */,
 				DBFCE29A285F9CF100AE1D06 /* test.s in Sources */,
+				DBBAD0DA2863BF4300242D6D /* ErrorParser.swift in Sources */,
+				DBBAD0BF2863B9FE00242D6D /* Registration.swift in Sources */,
+				DBBAD0CF2863BD9400242D6D /* RegistrationResult.swift in Sources */,
+				DBBAD0C72863BC1E00242D6D /* ChangeUserData.swift in Sources */,
+				DBBAD0B72863B83900242D6D /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +787,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBBAD0B82863B88200242D6D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBBAD0B92863B88200242D6D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBBAD0B82863B88200242D6D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DBFCE251285F9B5800AE1D06 /* Project object */;
 }
