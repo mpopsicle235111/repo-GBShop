@@ -38,7 +38,7 @@ extension СhangeUserData: СhangeUserDataRequestFactory {
 extension СhangeUserData {
     struct UserData: RequestRouter {
         let baseURL: URL
-        let metod: HTTPMethod = .get
+        let method: HTTPMethod = .get
         let path: String = "changeUserData.json"
 
         let user: User
