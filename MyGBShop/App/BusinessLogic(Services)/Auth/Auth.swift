@@ -52,7 +52,7 @@ extension Auth {
 
      struct Login: RequestRouter {
          var baseURL: URL
-         var metod: HTTPMethod = .get
+         var method: HTTPMethod = .get
          var path: String = "login.json"
 
          let login: String
@@ -71,7 +71,7 @@ extension Auth {
 
      struct Logout: RequestRouter {
          var baseURL: URL
-         var metod: HTTPMethod = .get
+         var method: HTTPMethod = .get
          var path: String = "logout.json"
 
          let userID: Int

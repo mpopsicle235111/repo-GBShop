@@ -43,4 +43,18 @@ class RequestFactory {
          let errorParser = makeErrorParser()
          return СhangeUserData(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    
+    //MARK: - GetCatalogue
+    func makeGetCatalogueRequestFactory() -> CatalogueRequestFactory {
+        let errorParser = makeErrorParser()
+        return Catalogue(errorParser: errorParser, sessinManager: commonSession, queue: sessionQueue)
+    }
+    
+    //MARK: - GetItemFactory
+    func makeGetItemRequestFactory() -> ItemByIdRequestFactory {
+        let errorParser = makeErrorParser()
+        return ItemById(errorParser: errorParser, sessinManager: commonSession, queue: sessionQueue)
+    }
+    
+    
 }

@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let auth = requestFactory.makeAuthRequestFactory()
         let regist = requestFactory.makeRegistRequestFactory()
         let changeUserData = requestFactory.makeСhangeUserDataFactory()
+        
+        //Added to get a list of items
+        let getCatalogue = requestFactory.makeGetCatalogueRequestFactory()
+        //Added to get a single selected item
+        let getItem = requestFactory.makeGetItemRequestFactory()
+        
         let user = User(id: 001,
                         login: "Jack007",
                         firstName: "Jack",
@@ -31,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         gender: "m",
                         creditCardNumber: "1234567812345678",
                         tagLine: "Money rule the world!")
+        
+        //Added to get a list of items
+        let pageNumber = 1
+        let categoryNumber = 1
+        //Added to get a single selected item
+        let productId = 7
 
         auth.login(userName: "Jack007", password: "sourCream2!") { response in
                 switch response.result {
@@ -41,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
         }
 
-        auth.logout(userID: user.id) { response in
+        auth.logout(userID: user.id ?? 0) { response in
                 switch response.result {
                 case .success(let result):
                     print(result)
@@ -52,10 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         regist.register(user: user) {response in
                 switch response.result {
-                case .success(let result):
-                    print(result)
-                case .failure(let error):
-                    print(error.localizedDescription)
+                    case .success(let result):
+                        print(result)
+                    case .failure(let error):
+                        print(error.localizedDescription)
                 }
         }
 
@@ -66,6 +78,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     case .failure(let error):
                          print(error.localizedDescription)
                 }
+        }
+        
+        //Added to get a list of items
+        getCatalogue.getCatalogue(pageNumber: pageNumber,
+                                  categoryNumber: categoryNumber) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        //Added to get a single selected item
+        getItem.getItem(productIdNumber: productId) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
         
         return true

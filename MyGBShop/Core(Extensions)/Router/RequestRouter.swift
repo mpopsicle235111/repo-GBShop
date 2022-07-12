@@ -14,7 +14,7 @@ enum RequestRouterEncoding {
 
 protocol RequestRouter: URLRequestConvertible {
     var baseURL: URL { get }
-    var metod: HTTPMethod { get }
+    var method: HTTPMethod { get }
     var path: String { get }
     var parameters: Parameters? { get }
     var fullURL: URL { get }
@@ -32,7 +32,7 @@ extension RequestRouter {
 
     func asURLRequest() throws -> URLRequest {
         var urlRequest = URLRequest(url: fullURL)
-        urlRequest.httpMethod = metod.rawValue
+        urlRequest.httpMethod = method.rawValue
 
         switch self.encoding {
         case .url:
