@@ -11,13 +11,17 @@ import Foundation
 struct ItemByIdResult: Codable {
     let result: Int
     let itemName: String
-    let itemPrice: Int
-    let itemDescription: String
+    let price: Int
+    let description: String
+    let itemId: Int
+    let picUrl: String
     
     enum CodingKeys: String, CodingKey {
         case result
         case itemName = "item_name"
-        case itemPrice = "item_price"
-        case itemDescription = "item_description"
+        case price
+        case description
+        case itemId = "id_product"
+        case picUrl
     }
 }

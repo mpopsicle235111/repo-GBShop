@@ -12,9 +12,9 @@ protocol AuthRequestFactory {
 
     func login(userName: String,
                 password: String,
-                completionHandler: @escaping (AFDataResponse<LoginResult>) -> Void)
+                completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void)
 
     func logout(userID: Int,
-                 completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void)
+                 completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void)
 
 }

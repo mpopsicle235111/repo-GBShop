@@ -12,7 +12,8 @@ class ItemById: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    //let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://boiling-wildwood-30728.herokuapp.com/")!
     
     init (
         errorParser: AbstractErrorParser,
@@ -37,7 +38,8 @@ extension ItemById: ItemByIdRequestFactory {
 extension ItemById {
     struct ItemById: RequestRouter {
         var baseURL: URL
-        var method: HTTPMethod = .get
+        //var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: String = "getItemById.json"
         let productIdNumber: Int
         
