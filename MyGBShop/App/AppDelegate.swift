@@ -36,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         email: "jackabramoff@aol.com",
                         gender: "m",
                         creditCardNumber: "1234567812345678",
-                        tagLine: "Money rule the world!")
+                        tagLine: "Money rule the world!"
+                        )
         
         //Added to get a list of items
         let pageNumber = 1

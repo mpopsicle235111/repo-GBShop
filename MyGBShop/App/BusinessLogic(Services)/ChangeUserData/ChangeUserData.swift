@@ -12,7 +12,8 @@ class СhangeUserData: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    //let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://boiling-wildwood-30728.herokuapp.com/")!
 
     init (
         errorParser: AbstractErrorParser,
@@ -28,7 +29,7 @@ extension СhangeUserData: СhangeUserDataRequestFactory {
 
 
 
-    func changeUserData(user: User, completionHandler: @escaping (AFDataResponse<СhangeUserDataResult>) -> Void) {
+    func changeUserData(user: User, completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void) {
          let requestModel = UserData(baseURL: baseUrl, user: user)
          self.request(request: requestModel,
                       completionHandler: completionHandler)
@@ -38,19 +39,22 @@ extension СhangeUserData: СhangeUserDataRequestFactory {
 extension СhangeUserData {
     struct UserData: RequestRouter {
         let baseURL: URL
-        let method: HTTPMethod = .get
+        //let method: HTTPMethod = .get
+        let method: HTTPMethod = .post
         let path: String = "changeUserData.json"
 
         let user: User
         var parameters: Parameters? {
             return [
-                 "id_user": user.id,
-                 "username": user.login ,
+                 "userId": user.id ?? 0,
+                 "userLogin": user.login ?? "",
                  "password": user.password ?? "",
                  "email": user.email ?? "",
                  "gender": user.gender ?? "",
                  "credit_card": user.creditCardNumber ?? "",
-                 "bio": user.tagLine ?? ""
+                 "bio": user.tagLine ?? "",
+                 "userName": user.firstName ?? "",
+                 "userLastName": user.lastName ?? ""
             ]
         }
     }
