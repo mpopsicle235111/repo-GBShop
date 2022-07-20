@@ -24,9 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let changeUserData = requestFactory.makeСhangeUserDataFactory()
         
         //Added to get a list of items
-        let getCatalogue = requestFactory.makeGetCatalogueRequestFactory()
+        let Catalogue = requestFactory.makeGetCatalogueRequestFactory()
         //Added to get a single selected item
-        let getItem = requestFactory.makeGetItemRequestFactory()
+        let ItemById = requestFactory.makeGetItemRequestFactory()
+        
+        //Added to handle item feedback
+        let feedback = requestFactory.makeGetFeedbackRequestFactory()
         
         let user = User(id: 001,
                         login: "Jack007",
@@ -44,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let categoryNumber = 1
         //Added to get a single selected item
         let productId = 7
+        //Added to get feedback
+        let feedbackResult = FeedbackResult(userId: 1, feedbackText: "Very cool item", productIdNumber: 1)
 
         auth.login(userName: "Jack007", password: "sourCream2!") { response in
                 switch response.result {
@@ -82,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Added to get a list of items
-        getCatalogue.getCatalogue(pageNumber: pageNumber,
+        Catalogue.getCatalogue(pageNumber: pageNumber,
                                   categoryNumber: categoryNumber) { response in
             switch response.result {
             case .success(let result):
@@ -93,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Added to get a single selected item
-        getItem.getItem(productIdNumber: productId) { response in
+        ItemById.getItem(productIdNumber: productId) { response in
             switch response.result {
             case .success(let result):
                 print(result)
@@ -101,6 +106,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
+        
+        //Added to get feedback from user
+        feedback.getFeedback(productIdNumber: productId) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        //Added to assign the feedback to item
+        feedback.addFeedback(feedback: feedbackResult) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        //Added to wipe the feedback from item
+        feedback.removeFeedback(feedback: feedbackResult) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
         
         return true
     }

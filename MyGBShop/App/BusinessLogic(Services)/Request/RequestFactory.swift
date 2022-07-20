@@ -56,5 +56,29 @@ class RequestFactory {
         return ItemById(errorParser: errorParser, sessinManager: commonSession, queue: sessionQueue)
     }
     
+    //MARK: - GetFeedbackRequestFactory
+    func makeGetFeedbackRequestFactory() -> FeedbackRequestFactory {
+        let errorParser = makeErrorParser()
+        return Feedback(errorParser: errorParser,
+                        sessinManager: commonSession,
+                        queue: sessionQueue)
+    }
+
+    // MARK: - AddFeedbackRequestFactory
+    func makeAddFeedbackRequestFactory() -> FeedbackRequestFactory {
+        let errorParser = makeErrorParser()
+        return Feedback(errorParser: errorParser,
+                        sessinManager: commonSession,
+                        queue: sessionQueue)
+         }
+
+    // MARK: - RemoveRewiewRequestFactory
+    func makeRemoveFeedbackRequestFactory() -> FeedbackRequestFactory {
+        let errorParser = makeErrorParser()
+        return Feedback(errorParser: errorParser,
+                        sessinManager: commonSession,
+                        queue: sessionQueue)
+    }
+    
     
 }
