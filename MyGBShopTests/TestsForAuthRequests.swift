@@ -9,7 +9,7 @@ import XCTest
 import Alamofire
 @testable import MyGBShop
 
-class TestsForRequests: XCTestCase {
+class TestsForAuthRequests: XCTestCase {
     var requestFactory: RequestFactory!
     var user: User!
     
@@ -80,34 +80,7 @@ class TestsForRequests: XCTestCase {
     
     func testShouldPerformLogoutRequest() {
         let factory = requestFactory.makeAuthRequestFactory()
-        factory.logout(userID: user.id ?? 0) { [weak self] response in
-            switch response.result {
-            case .success(let result):
-                XCTAssertEqual(result.result, 1)
-            case .failure:
-                XCTFail()
-            }
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: timeoutValue)
-    }
-    
-    func testShouldPerformGetCatalogueRequest() {
-        let factory = requestFactory.makeGetCatalogueRequestFactory()
-        factory.getCatalogue(pageNumber: 1, categoryNumber: 1) { [weak self] response in
-            switch response.result {
-            case .success: break
-            case .failure:
-                XCTFail()
-            }
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: timeoutValue)
-    }
-    
-    func testShouldPerformGetItemRequest() {
-        let factory = requestFactory.makeGetItemRequestFactory()
-        factory.getItem(productIdNumber: 7) { [weak self] response in
+        factory.logout(userID: user.id!) { [weak self] response in
             switch response.result {
             case .success(let result):
                 XCTAssertEqual(result.result, 1)
