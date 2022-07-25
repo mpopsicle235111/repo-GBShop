@@ -10,7 +10,7 @@ import Alamofire
  protocol FeedbackRequestFactory {
      func getFeedback(productIdNumber: Int, completionHandler: @escaping (AFDataResponse<[FeedbackResult]>) -> Void)
 
-     func addFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void)
+     func addFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void)
 
-     func removeFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void)
+     func removeFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void)
  }

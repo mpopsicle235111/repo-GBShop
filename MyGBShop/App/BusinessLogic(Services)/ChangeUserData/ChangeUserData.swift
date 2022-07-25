@@ -29,7 +29,7 @@ extension СhangeUserData: СhangeUserDataRequestFactory {
 
 
 
-    func changeUserData(user: User, completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void) {
+    func changeUserData(user: User, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
          let requestModel = UserData(baseURL: baseUrl, user: user)
          self.request(request: requestModel,
                       completionHandler: completionHandler)

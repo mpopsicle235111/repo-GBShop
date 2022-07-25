@@ -28,7 +28,7 @@ class TestsForFeedbackRequests: XCTestCase {
      }
 
      func testShouldPerformGetFeedbackRequest() {
-         let factory = requestFactory.makeGetFeedbackRequestFactory()
+         let factory = requestFactory.makeFeedbackRequestFactory()
 
          factory.getFeedback(productIdNumber: 1) { response in
              switch response.result {
@@ -41,7 +41,7 @@ class TestsForFeedbackRequests: XCTestCase {
      }
 
      func testShouldPerformAddFeedbackRequest() {
-         let factory = requestFactory.makeAddFeedbackRequestFactory()
+         let factory = requestFactory.makeFeedbackRequestFactory()
 
          factory.addFeedback(feedback: FeedbackResult(userId: 1, feedbackText: "Very cool item", productIdNumber: 1)) { [weak self] response in
              switch response.result {
@@ -56,7 +56,7 @@ class TestsForFeedbackRequests: XCTestCase {
      }
 
      func testShouldPerformRemoveFeedbackRequest() {
-         let factory = requestFactory.makeAddFeedbackRequestFactory()
+         let factory = requestFactory.makeFeedbackRequestFactory()
 
          factory.removeFeedback(feedback: FeedbackResult(userId: 1, feedbackText: "Very cool item", productIdNumber: 1)) { [weak self] response in
              switch response.result {

@@ -56,8 +56,8 @@ class RequestFactory {
         return ItemById(errorParser: errorParser, sessinManager: commonSession, queue: sessionQueue)
     }
     
-    //MARK: - GetFeedbackRequestFactory
-    func makeGetFeedbackRequestFactory() -> FeedbackRequestFactory {
+    //MARK: - FeedbackRequestFactory
+    func makeFeedbackRequestFactory() -> FeedbackRequestFactory {
         let errorParser = makeErrorParser()
         return Feedback(errorParser: errorParser,
                         sessinManager: commonSession,
@@ -78,6 +78,14 @@ class RequestFactory {
         return Feedback(errorParser: errorParser,
                         sessinManager: commonSession,
                         queue: sessionQueue)
+    }
+    
+    // MARK: - ShoppingCartRequestFactory
+    func makeShoppingCartRequestFactory() -> ShoppingCartRequestFactory {
+        let errorParser = makeErrorParser()
+        return ShoppingCart(errorParser: errorParser,
+                            sessinManager: commonSession,
+                            queue: sessionQueue)
     }
     
     
