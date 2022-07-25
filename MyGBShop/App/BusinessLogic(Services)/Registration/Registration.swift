@@ -29,7 +29,7 @@ class Registration: AbstractRequestFactory {
 extension Registration: RegistrationRequestFactory {
 
     func register(user: User,
-                   completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void) {
+                   completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
         let requestModel = Register(baseURL: baseUrl, user: user)
         self.request(request: requestModel,
                       completionHandler: completionHandler)

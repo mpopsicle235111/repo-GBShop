@@ -29,7 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ItemById = requestFactory.makeGetItemRequestFactory()
         
         //Added to handle item feedback
-        let feedback = requestFactory.makeGetFeedbackRequestFactory()
+        let feedback = requestFactory.makeFeedbackRequestFactory()
+        
+        //Added to handle the shopping cart
+        let shoppingCart = requestFactory.makeShoppingCartRequestFactory()
         
         let user = User(id: 001,
                         login: "Jack007",
@@ -46,10 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pageNumber = 1
         let categoryNumber = 1
         //Added to get a single selected item
-        let productId = 7
+        let productId = 1
         //Added to get feedback
         let feedbackResult = FeedbackResult(userId: 1, feedbackText: "Very cool item", productIdNumber: 1)
-
+        //Added to handle the shopping cart
+        let shoppingCartRequest = ShoppingCartRequest(itemId: productId, quantity: 1)
+        
         auth.login(userName: "Jack007", password: "sourCream2!") { response in
                 switch response.result {
                 case .success(let result):
@@ -129,6 +134,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Added to wipe the feedback from item
         feedback.removeFeedback(feedback: feedbackResult) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        //Added to handle the shopping cart (ADD)
+        shoppingCart.addToShoppingCart(shoppingCart: shoppingCartRequest) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+         
+        //Added to handle the shopping cart (DELETE)
+        shoppingCart.deleteFromShoppingCart(shoppingCart: shoppingCartRequest) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        //Added to handle the shopping cart (GET)
+        shoppingCart.getShoppingCart(user: user) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        //Added to handle the shopping cart (PAY)
+        shoppingCart.payForShoppingCart(user: user) { response in
             switch response.result {
             case .success(let result):
                 print(result)

@@ -32,13 +32,13 @@ import Alamofire
                       completionHandler: completionHandler)
      }
 
-     func addFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void) {
+     func addFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
          let requestModel = AddFeedback(baseURL: baseUrl, feedback: feedback)
          self.request(request: requestModel,
                       completionHandler: completionHandler)
      }
 
-     func removeFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResponse>) -> Void) {
+     func removeFeedback(feedback: FeedbackResult, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
          let requestModel = RemoveFeedback(baseURL: baseUrl, feedback: feedback)
          self.request(request: requestModel,
                       completionHandler: completionHandler)
