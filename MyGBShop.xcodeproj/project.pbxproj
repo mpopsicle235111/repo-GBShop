@@ -38,6 +38,15 @@
 		DBBAD0DA2863BF4300242D6D /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0D92863BF4300242D6D /* ErrorParser.swift */; };
 		DBBAD0DC2863BF7500242D6D /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0DB2863BF7500242D6D /* ResponseCodable.swift */; };
 		DBBAD0DF2863BFED00242D6D /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAD0DE2863BFED00242D6D /* RequestRouter.swift */; };
+		DBC13B9A289061B400AB2D7E /* ApplicationStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13B99289061B400AB2D7E /* ApplicationStarter.swift */; };
+		DBC13B9C2890629800AB2D7E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13B9B2890629800AB2D7E /* AuthViewController.swift */; };
+		DBC13B9E2890666300AB2D7E /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13B9D2890666300AB2D7E /* AuthView.swift */; };
+		DBC13BA02890937200AB2D7E /* GetUserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13B9F2890937200AB2D7E /* GetUserDataViewController.swift */; };
+		DBC13BA228909ADE00AB2D7E /* GetUserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13BA128909ADE00AB2D7E /* GetUserDataView.swift */; };
+		DBC13BA42890C7B900AB2D7E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13BA32890C7B900AB2D7E /* RegistrationViewController.swift */; };
+		DBC13BA62890C92B00AB2D7E /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13BA52890C92B00AB2D7E /* RegistrationView.swift */; };
+		DBC13BA82890CF1F00AB2D7E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13BA72890CF1F00AB2D7E /* TabBarViewController.swift */; };
+		DBC13BAA2890D01A00AB2D7E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC13BA92890D01A00AB2D7E /* MainScreenViewController.swift */; };
 		DBDF13562886D800000A4635 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF13552886D800000A4635 /* DefaultResult.swift */; };
 		DBF6F5A2287B178500816DED /* Catalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6F5A1287B178500816DED /* Catalogue.swift */; };
 		DBFCE25D285F9B5800AE1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCE25C285F9B5800AE1D06 /* AppDelegate.swift */; };
@@ -100,6 +109,15 @@
 		DBBAD0D92863BF4300242D6D /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		DBBAD0DB2863BF7500242D6D /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
 		DBBAD0DE2863BFED00242D6D /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		DBC13B99289061B400AB2D7E /* ApplicationStarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStarter.swift; sourceTree = "<group>"; };
+		DBC13B9B2890629800AB2D7E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		DBC13B9D2890666300AB2D7E /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		DBC13B9F2890937200AB2D7E /* GetUserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDataViewController.swift; sourceTree = "<group>"; };
+		DBC13BA128909ADE00AB2D7E /* GetUserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDataView.swift; sourceTree = "<group>"; };
+		DBC13BA32890C7B900AB2D7E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DBC13BA52890C92B00AB2D7E /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DBC13BA72890CF1F00AB2D7E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		DBC13BA92890D01A00AB2D7E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		DBDF13552886D800000A4635 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
 		DBF6F5A1287B178500816DED /* Catalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalogue.swift; sourceTree = "<group>"; };
 		DBFCE259285F9B5800AE1D06 /* MyGBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +232,14 @@
 				DBBAD0DE2863BFED00242D6D /* RequestRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		DBC13B982890619300AB2D7E /* ApplicationStarter */ = {
+			isa = PBXGroup;
+			children = (
+				DBC13B99289061B400AB2D7E /* ApplicationStarter.swift */,
+			);
+			path = ApplicationStarter;
 			sourceTree = "<group>";
 		};
 		DBF6F5A0287B174600816DED /* Network */ = {
@@ -335,6 +361,7 @@
 		DBFCE290285F9BBA00AE1D06 /* BusinessLogic(Services) */ = {
 			isa = PBXGroup;
 			children = (
+				DBC13B982890619300AB2D7E /* ApplicationStarter */,
 				DB89812F288EB9480073B19F /* ShoppingCart */,
 				DBB397DF2888BF55006A8002 /* Feedback */,
 				DBBAD0B52863B81900242D6D /* Auth */,
@@ -372,6 +399,14 @@
 			isa = PBXGroup;
 			children = (
 				DBFCE260285F9B5800AE1D06 /* ContentView.swift */,
+				DBC13B9B2890629800AB2D7E /* AuthViewController.swift */,
+				DBC13B9D2890666300AB2D7E /* AuthView.swift */,
+				DBC13B9F2890937200AB2D7E /* GetUserDataViewController.swift */,
+				DBC13BA128909ADE00AB2D7E /* GetUserDataView.swift */,
+				DBC13BA32890C7B900AB2D7E /* RegistrationViewController.swift */,
+				DBC13BA52890C92B00AB2D7E /* RegistrationView.swift */,
+				DBC13BA72890CF1F00AB2D7E /* TabBarViewController.swift */,
+				DBC13BA92890D01A00AB2D7E /* MainScreenViewController.swift */,
 			);
 			path = "Flows(ControllersAndCells)";
 			sourceTree = "<group>";
@@ -514,13 +549,18 @@
 			files = (
 				DB898133288EC34F0073B19F /* ShoppingCartRequestFactory.swift in Sources */,
 				DBBAD0C92863BCEE00242D6D /* ChangeUserDataRequestFactory.swift in Sources */,
+				DBC13BA42890C7B900AB2D7E /* RegistrationViewController.swift in Sources */,
+				DBC13BA62890C92B00AB2D7E /* RegistrationView.swift in Sources */,
 				DBDF13562886D800000A4635 /* DefaultResult.swift in Sources */,
 				DBB397E12888BF70006A8002 /* Feedback.swift in Sources */,
 				DB898137288EC6660073B19F /* ShoppingCartResult.swift in Sources */,
 				DBAA1E14287CE19800B1E0B1 /* ItemById.swift in Sources */,
+				DBC13BAA2890D01A00AB2D7E /* MainScreenViewController.swift in Sources */,
+				DBC13BA82890CF1F00AB2D7E /* TabBarViewController.swift in Sources */,
 				DBBAD0C42863BB4F00242D6D /* RequestFactory.swift in Sources */,
 				DBAA1E16287CE47800B1E0B1 /* ItemByIdRequestFactory.swift in Sources */,
 				DBFCE25D285F9B5800AE1D06 /* AppDelegate.swift in Sources */,
+				DBC13BA228909ADE00AB2D7E /* GetUserDataView.swift in Sources */,
 				DBBAD0D12863BDC700242D6D /* User.swift in Sources */,
 				DBAA1E12287CE03F00B1E0B1 /* CatalogueRequestFactory.swift in Sources */,
 				DBBAD0DF2863BFED00242D6D /* RequestRouter.swift in Sources */,
@@ -533,12 +573,16 @@
 				DBBAD0BC2863B9A300242D6D /* AuthRequestFactory.swift in Sources */,
 				DBBAD0D52863BE8100242D6D /* AbstractRequestFactory.swift in Sources */,
 				DB898135288EC61D0073B19F /* ShoppingCartRequest.swift in Sources */,
+				DBC13B9E2890666300AB2D7E /* AuthView.swift in Sources */,
 				DBFCE261285F9B5800AE1D06 /* ContentView.swift in Sources */,
 				DBF6F5A2287B178500816DED /* Catalogue.swift in Sources */,
 				DBFCE29A285F9CF100AE1D06 /* test.s in Sources */,
 				DBAA1E1A287CE98600B1E0B1 /* ItemByIdResult.swift in Sources */,
 				DBBAD0DA2863BF4300242D6D /* ErrorParser.swift in Sources */,
+				DBC13B9C2890629800AB2D7E /* AuthViewController.swift in Sources */,
 				DBAA1E18287CE6D800B1E0B1 /* CatalogueResult.swift in Sources */,
+				DBC13B9A289061B400AB2D7E /* ApplicationStarter.swift in Sources */,
+				DBC13BA02890937200AB2D7E /* GetUserDataViewController.swift in Sources */,
 				DBBAD0BF2863B9FE00242D6D /* Registration.swift in Sources */,
 				DBBAD0C72863BC1E00242D6D /* ChangeUserData.swift in Sources */,
 				DB898131288EB9610073B19F /* ShoppingCart.swift in Sources */,
