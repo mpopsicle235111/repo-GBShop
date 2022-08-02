@@ -29,7 +29,7 @@ class Catalogue: AbstractRequestFactory {
 
 extension Catalogue: CatalogueRequestFactory {
     
-    func getCatalogue(pageNumber: Int, categoryNumber: Int, completionHandler: @escaping (AFDataResponse<[CatalogueResult]>) -> Void) {
+    func getCatalogue(pageNumber: Int, categoryNumber: Int, completionHandler: @escaping (AFDataResponse<CatalogueResult>) -> Void) {
         let requestModel = GetCatalogue(baseURL: baseUrl, pageNumber: pageNumber, categoryNumber: categoryNumber)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -51,3 +51,4 @@ extension Catalogue {
         }
     }
 }
+

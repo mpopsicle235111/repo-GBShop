@@ -15,7 +15,6 @@ class AuthViewController: UIViewController {
 
     let requestFactory = RequestFactory()
 
-     
     override func loadView() {
         super.loadView()
         let view = AuthView()
@@ -26,6 +25,12 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setToolbarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
      
