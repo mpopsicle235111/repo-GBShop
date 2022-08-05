@@ -65,5 +65,12 @@ import UIKit
              }
          }
      }
+     
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+              let itemId = catalogue.items[indexPath.row].itemId ?? 0
+
+              navigationController?.pushViewController(ItemCardViewController(productIdNumber: itemId), animated: true)
+          }
+
 
  }

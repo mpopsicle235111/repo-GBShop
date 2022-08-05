@@ -14,7 +14,7 @@ class Catalogue: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     //let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-    let baseUrl = URL(string: "https://thawing-meadow-23707.herokuapp.com/")!
+    let baseUrl = URL(string: "https://tranquil-headland-91171.herokuapp.com/")!
     
     init (
         errorParser: AbstractErrorParser,
