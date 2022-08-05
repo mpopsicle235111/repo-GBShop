@@ -54,6 +54,8 @@ class AuthView: UIView {
 
     private(set) lazy var loginButton: UIButton = {
         let button = UIButton()
+        //This makes button text font too small:
+        //let button = UIButton(type: .system)
         button.backgroundColor = .orange
         button.setTitle("Log In", for: .normal)
         button.clipsToBounds = true
@@ -66,6 +68,8 @@ class AuthView: UIView {
 
     private(set) lazy var registerButton: UIButton = {
         let button = UIButton()
+        //This makes button text font too small:
+        //let button = UIButton(type: .system)
         button.backgroundColor = .orange
         button.tintColor = .white
         button.layer.cornerRadius = 10.0

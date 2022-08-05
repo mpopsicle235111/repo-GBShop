@@ -9,12 +9,12 @@ import Foundation
 
 //MARK: - ItemById
 struct ItemByIdResult: Codable {
-    let result: Int
-    let itemName: String
-    let price: Int
-    let description: String
-    let itemId: Int
-    let picUrl: String
+    let result: Int?
+    let itemName: String?
+    let price: Int?
+    let description: String?
+    let itemId: Int?
+    let picUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case result

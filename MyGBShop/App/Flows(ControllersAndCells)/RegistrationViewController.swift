@@ -24,9 +24,16 @@ import UIKit
 
      override func viewDidLoad() {
          super.viewDidLoad()
-
-
      }
+     
+     override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         navigationController?.setNavigationBarHidden(false, animated: true)
+         navigationController?.navigationBar.isTranslucent = true
+         navigationController?.navigationItem.hidesBackButton = false
+     }
+     
+     
      
      private func displayErrorMessage(_ errorMessage: String) {
          let alert = UIAlertController(title: "ERROR",

@@ -156,16 +156,19 @@ class RegistrationView: UIView {
     private func allocateFieldsAndButtons() {
         self.backgroundColor = .white
         self.addSubview(self.scrollView)
-        self.scrollView.addSubview(self.headerLabel)
-        self.scrollView.addSubview(self.firstNameTextField)
-        self.scrollView.addSubview(self.lastNameTextField)
-        self.scrollView.addSubview(self.loginTextField)
-        self.scrollView.addSubview(self.passwordTextField)
-        self.scrollView.addSubview(self.emailTextField)
-        self.scrollView.addSubview(self.genderSegmentedControl)
-        self.scrollView.addSubview(self.tagLineTextField)
-        self.scrollView.addSubview(self.registerButton)
-        self.scrollView.addSubview(self.resetAllButtons)
+        [self.headerLabel,
+         self.firstNameTextField,
+         self.lastNameTextField,
+         self.loginTextField,
+         self.passwordTextField,
+         self.emailTextField,
+         self.genderSegmentedControl,
+         self.tagLineTextField,
+         self.registerButton,
+         self.resetAllButtons
+        ].forEach {
+            self.scrollView.addSubview($0)
+        }
 
         NSLayoutConstraint.activate([
             self.scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0.0),
