@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB64939028ADBB34007DE991 /* AppShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64938F28ADBB34007DE991 /* AppShoppingCart.swift */; };
+		DB64939228ADBDCE007DE991 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64939128ADBDCE007DE991 /* ShoppingCartTableViewCell.swift */; };
+		DB64939428ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64939328ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift */; };
+		DB64939628ADC731007DE991 /* ShoppingCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64939528ADC731007DE991 /* ShoppingCartTableViewController.swift */; };
 		DB707042289D27CA00C5E633 /* ItemCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB707041289D27CA00C5E633 /* ItemCardViewController.swift */; };
 		DB707044289D313800C5E633 /* ItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB707043289D313800C5E633 /* ItemCardView.swift */; };
 		DB707046289D3AEA00C5E633 /* AddFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB707045289D3AEA00C5E633 /* AddFeedbackViewController.swift */; };
@@ -90,6 +94,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB64938F28ADBB34007DE991 /* AppShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShoppingCart.swift; sourceTree = "<group>"; };
+		DB64939128ADBDCE007DE991 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
+		DB64939328ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartFooterTableViewCell.swift; sourceTree = "<group>"; };
+		DB64939528ADC731007DE991 /* ShoppingCartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewController.swift; sourceTree = "<group>"; };
 		DB707041289D27CA00C5E633 /* ItemCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardViewController.swift; sourceTree = "<group>"; };
 		DB707043289D313800C5E633 /* ItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardView.swift; sourceTree = "<group>"; };
 		DB707045289D3AEA00C5E633 /* AddFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedbackViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +194,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB64938E28ADBB10007DE991 /* AppShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				DB64938F28ADBB34007DE991 /* AppShoppingCart.swift */,
+			);
+			path = AppShoppingCart;
+			sourceTree = "<group>";
+		};
 		DB89812F288EB9480073B19F /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +400,7 @@
 		DBFCE290285F9BBA00AE1D06 /* BusinessLogic(Services) */ = {
 			isa = PBXGroup;
 			children = (
+				DB64938E28ADBB10007DE991 /* AppShoppingCart */,
 				DBC13B982890619300AB2D7E /* ApplicationStarter */,
 				DB89812F288EB9480073B19F /* ShoppingCart */,
 				DBB397DF2888BF55006A8002 /* Feedback */,
@@ -422,6 +439,9 @@
 			isa = PBXGroup;
 			children = (
 				DBFCE260285F9B5800AE1D06 /* ContentView.swift */,
+				DB64939128ADBDCE007DE991 /* ShoppingCartTableViewCell.swift */,
+				DB64939328ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift */,
+				DB64939528ADC731007DE991 /* ShoppingCartTableViewController.swift */,
 				DB93AD452894B51B00C4B799 /* RoundItemImageView.swift */,
 				DBC13B9B2890629800AB2D7E /* AuthViewController.swift */,
 				DBC13B9D2890666300AB2D7E /* AuthView.swift */,
@@ -590,8 +610,10 @@
 				DB93AD442894B43100C4B799 /* Extensions+Int.swift in Sources */,
 				DBB397E12888BF70006A8002 /* Feedback.swift in Sources */,
 				DB898137288EC6660073B19F /* ShoppingCartResult.swift in Sources */,
+				DB64939628ADC731007DE991 /* ShoppingCartTableViewController.swift in Sources */,
 				DBAA1E14287CE19800B1E0B1 /* ItemById.swift in Sources */,
 				DBC13BAA2890D01A00AB2D7E /* MainScreenViewController.swift in Sources */,
+				DB64939228ADBDCE007DE991 /* ShoppingCartTableViewCell.swift in Sources */,
 				DBC13BA82890CF1F00AB2D7E /* TabBarViewController.swift in Sources */,
 				DBBAD0C42863BB4F00242D6D /* RequestFactory.swift in Sources */,
 				DBAA1E16287CE47800B1E0B1 /* ItemByIdRequestFactory.swift in Sources */,
@@ -602,8 +624,10 @@
 				DBBAD0DF2863BFED00242D6D /* RequestRouter.swift in Sources */,
 				DBFCE29C285F9D0D00AE1D06 /* Data+PrettyJSON.swift in Sources */,
 				DBB397E52888C24C006A8002 /* FeedbackResult.swift in Sources */,
+				DB64939428ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift in Sources */,
 				DBBAD0C12863BAF200242D6D /* RegistrationRequestFactory.swift in Sources */,
 				DBBAD0D82863BF1500242D6D /* AbstractErrorParser.swift in Sources */,
+				DB64939028ADBB34007DE991 /* AppShoppingCart.swift in Sources */,
 				DBFCE25F285F9B5800AE1D06 /* SceneDelegate.swift in Sources */,
 				DB707046289D3AEA00C5E633 /* AddFeedbackViewController.swift in Sources */,
 				DBBAD0DC2863BF7500242D6D /* ResponseCodable.swift in Sources */,

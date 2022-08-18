@@ -100,6 +100,7 @@ class AuthView: UIView {
         self.setupControls()
         self.registerNotifications()
         self.hideKeyboardGesture()
+        self.setupAccessibility()
     }
 
     required init?(coder: NSCoder) {
@@ -183,6 +184,15 @@ class AuthView: UIView {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
 
         scrollView.addGestureRecognizer(hideKeyboardGesture)
+    }
+    
+    private func setupAccessibility() {
+        
+        self.accessibilityIdentifier = "loginView"
+        self.loginTextField.accessibilityIdentifier = "loginTextField"
+        self.passwordTextField.accessibilityIdentifier = "passwordTextField"
+        self.loginButton.accessibilityIdentifier = "loginButton"
+        self.registerButton.accessibilityIdentifier = "registerButton"
     }
    
      

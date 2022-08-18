@@ -24,6 +24,8 @@ import UIKit
 
      override func viewDidLoad() {
          super.viewDidLoad()
+         //Added for testing
+         view.accessibilityIdentifier = "registrationViewController"
      }
      
      override func viewWillAppear(_ animated: Bool) {

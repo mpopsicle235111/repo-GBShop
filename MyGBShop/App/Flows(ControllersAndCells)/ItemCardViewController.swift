@@ -14,6 +14,7 @@ class ItemCardViewController: UIViewController {
     }
 
     var productIdNumber: Int
+    var item: ItemByIdResult?
 
     let requestFactory = RequestFactory()
 
@@ -48,11 +49,18 @@ class ItemCardViewController: UIViewController {
                 case .success(let result):
                     print(result)
                     self.itemCardView.configure(result)
+                    self.item = result
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
             }
         }
+    }
+    
+    private func showAddToShoppingCartSuccessAlert() {
+            let alert = UIAlertController(title: "Cart", message: "Item added to cart.", preferredStyle: .alert)
+                 alert.addAction(UIAlertAction(title: "ОK", style: .default, handler: nil))
+                 self.present(alert, animated: true, completion: nil)
     }
 
 }
@@ -72,5 +80,23 @@ extension ItemCardViewController: ItemCardViewProtocol {
         print("Item ID Is:")
         print(productIdNumber)
         print("====================")
+        guard let item = item else { return }
+                 let shoppingCart = requestFactory.makeShoppingCartRequestFactory()
+                 let shoppingCartRequest = ShoppingCartRequest(itemId: item.itemId ?? 0, quantity: 1)
+                 shoppingCart.addToShoppingCart(shoppingCart: shoppingCartRequest) { response in
+                     switch response.result {
+                     case .success:
+                         DispatchQueue.main.async {
+                             let item = AppShoppingCartItem(productIdNumber: item.itemId,
+                                                      itemName: item.itemName,
+                                                      price: item.price,
+                                                      picUrl: item.picUrl)
+                             AppShoppingCart.shared.items.append(item)
+                             self.showAddToShoppingCartSuccessAlert()
+                         }
+                     case .failure(let error):
+                         print(error.localizedDescription)
+                     }
+                 }
     }
 }
