@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 protocol RegistrationViewProtocol: AnyObject {
      func pressRegisterButton(user: User)
@@ -293,7 +294,12 @@ class RegistrationView: UIView {
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
+        //This was before:
+        //guard let userInfo = notification.userInfo else { return }
+        //Now with Crashlytics:
+        guard let userInfo = notification.userInfo else { Crashlytics.crashlytics().log("thereIsNoInformationAboutThisUser")
+            return
+        }
 
         var keyboardFrame: CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         var contentInset: UIEdgeInsets = self.scrollView.contentInset

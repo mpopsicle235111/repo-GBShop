@@ -65,14 +65,14 @@ import UIKit
      func pressRegisterButton(user: User) {
          let register = requestFactory.makeRegistRequestFactory()
 
-         register.register(user: user) {response in
+         register.register(user: user) { [weak self] response in
              DispatchQueue.main.async {
                  switch response.result {
                  case .success(let result):
-                     result.result == 1 ? self.goToMainScreen() : self.displayErrorMessage(result.errorMessage ?? "Unknown Error")
+                     result.result == 1 ? self?.goToMainScreen() : self?.displayErrorMessage(result.errorMessage ?? "Unknown Error")
                      print(result)
                  case .failure(let error):
-                     self.displayErrorMessage(error.localizedDescription)
+                     self?.displayErrorMessage(error.localizedDescription)
                      print(error.localizedDescription)
                  }
              }

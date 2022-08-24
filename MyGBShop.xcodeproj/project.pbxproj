@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB5048F628B58D6500DFCC77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB5048F528B58D6500DFCC77 /* GoogleService-Info.plist */; };
+		DB5048F928B58E0C00DFCC77 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DB5048F828B58E0C00DFCC77 /* FirebaseAnalytics */; };
+		DB5048FB28B58E0C00DFCC77 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DB5048FA28B58E0C00DFCC77 /* FirebaseCrashlytics */; };
+		DB5048FD28B58F2A00DFCC77 /* GALogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5048FC28B58F2A00DFCC77 /* GALogger.swift */; };
 		DB64939028ADBB34007DE991 /* AppShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64938F28ADBB34007DE991 /* AppShoppingCart.swift */; };
 		DB64939228ADBDCE007DE991 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64939128ADBDCE007DE991 /* ShoppingCartTableViewCell.swift */; };
 		DB64939428ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64939328ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift */; };
@@ -94,6 +98,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB5048F528B58D6500DFCC77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB5048FC28B58F2A00DFCC77 /* GALogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALogger.swift; sourceTree = "<group>"; };
 		DB64938F28ADBB34007DE991 /* AppShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShoppingCart.swift; sourceTree = "<group>"; };
 		DB64939128ADBDCE007DE991 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
 		DB64939328ADC087007DE991 /* ShoppingCartFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartFooterTableViewCell.swift; sourceTree = "<group>"; };
@@ -173,7 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB93AD402894AAE600C4B799 /* SDWebImage in Frameworks */,
+				DB5048FB28B58E0C00DFCC77 /* FirebaseCrashlytics in Frameworks */,
 				DBBAD0BA2863B88200242D6D /* Alamofire in Frameworks */,
+				DB5048F928B58E0C00DFCC77 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +302,7 @@
 		DBFCE250285F9B5800AE1D06 = {
 			isa = PBXGroup;
 			children = (
+				DB5048F528B58D6500DFCC77 /* GoogleService-Info.plist */,
 				DBFCE25B285F9B5800AE1D06 /* MyGBShop */,
 				DBFCE272285F9B5C00AE1D06 /* MyGBShopTests */,
 				DBFCE27D285F9B5C00AE1D06 /* MyGBShopUITests */,
@@ -374,6 +383,7 @@
 				DBFCE29B285F9D0D00AE1D06 /* Data+PrettyJSON.swift */,
 				DB93AD432894B43100C4B799 /* Extensions+Int.swift */,
 				DBBAD0D42863BE8100242D6D /* AbstractRequestFactory.swift */,
+				DB5048FC28B58F2A00DFCC77 /* GALogger.swift */,
 				DBBAD0D62863BEF900242D6D /* Error */,
 				DBBAD0DB2863BF7500242D6D /* ResponseCodable.swift */,
 				DBBAD0DD2863BFD400242D6D /* Router */,
@@ -482,6 +492,8 @@
 			packageProductDependencies = (
 				DBBAD0B92863B88200242D6D /* Alamofire */,
 				DB93AD3F2894AAE600C4B799 /* SDWebImage */,
+				DB5048F828B58E0C00DFCC77 /* FirebaseAnalytics */,
+				DB5048FA28B58E0C00DFCC77 /* FirebaseCrashlytics */,
 			);
 			productName = MyGBShop;
 			productReference = DBFCE259285F9B5800AE1D06 /* MyGBShop.app */;
@@ -557,6 +569,7 @@
 			packageReferences = (
 				DBBAD0B82863B88200242D6D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DB93AD3E2894AAE600C4B799 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				DB5048F728B58E0C00DFCC77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = DBFCE25A285F9B5800AE1D06 /* Products */;
 			projectDirPath = "";
@@ -575,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBFCE269285F9B5C00AE1D06 /* LaunchScreen.storyboard in Resources */,
+				DB5048F628B58D6500DFCC77 /* GoogleService-Info.plist in Resources */,
 				DBFCE266285F9B5C00AE1D06 /* Preview Assets.xcassets in Resources */,
 				DBFCE263285F9B5C00AE1D06 /* Assets.xcassets in Resources */,
 			);
@@ -634,6 +648,7 @@
 				DB93AD3D2894AA5400C4B799 /* CatalogueTableViewCell.swift in Sources */,
 				DB707042289D27CA00C5E633 /* ItemCardViewController.swift in Sources */,
 				DBBAD0BC2863B9A300242D6D /* AuthRequestFactory.swift in Sources */,
+				DB5048FD28B58F2A00DFCC77 /* GALogger.swift in Sources */,
 				DB93AD422894AFDF00C4B799 /* CatalogueTableViewController.swift in Sources */,
 				DBBAD0D52863BE8100242D6D /* AbstractRequestFactory.swift in Sources */,
 				DB898135288EC61D0073B19F /* ShoppingCartRequest.swift in Sources */,
@@ -985,6 +1000,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DB5048F728B58E0C00DFCC77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		DB93AD3E2894AAE600C4B799 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -1004,6 +1027,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DB5048F828B58E0C00DFCC77 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB5048F728B58E0C00DFCC77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		DB5048FA28B58E0C00DFCC77 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB5048F728B58E0C00DFCC77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		DB93AD3F2894AAE600C4B799 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DB93AD3E2894AAE600C4B799 /* XCRemoteSwiftPackageReference "SDWebImage" */;

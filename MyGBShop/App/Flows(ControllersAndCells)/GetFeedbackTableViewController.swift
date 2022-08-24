@@ -53,13 +53,13 @@ class GetFeedbackTableViewController: UITableViewController {
     func getFeedback(itemId: Int) {
         let feedbackItem = requestFactory.makeFeedbackRequestFactory()
 
-        feedbackItem.getFeedback(productIdNumber: itemId) { response in
+        feedbackItem.getFeedback(productIdNumber: itemId) { [weak self] response in
             switch response.result {
             case .success(let result):
-                self.feedback = result
+                self?.feedback = result
                 print(result)
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             case .failure(let error):
                 print(error.localizedDescription)

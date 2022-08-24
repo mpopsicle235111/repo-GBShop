@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class ShoppingCartTableViewController: UITableViewController {
 
@@ -17,6 +18,9 @@ class ShoppingCartTableViewController: UITableViewController {
         tableView.register(ShoppingCartFooterTableViewCell.self, forHeaderFooterViewReuseIdentifier: ShoppingCartFooterTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //Added for Crashlytics
+        GALogger.logEvent(name: "shoppingCartVisited", key: "ResultIs", value: "Success")
 
     }
 
@@ -49,7 +53,7 @@ class ShoppingCartTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if AppShoppingCart.shared.items.count == 0 {
             let cell = UITableViewCell()
-            cell.textLabel?.text = "The shopping cart is empty"
+            cell.textLabel?.text = "theShoppingCartIsEmpty"
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingCartTableViewCell.reuseIdentifier) as? ShoppingCartTableViewCell
@@ -74,7 +78,13 @@ class ShoppingCartTableViewController: UITableViewController {
 
 extension ShoppingCartTableViewController: ShoppingCartTableViewCellProtocol {
     func deleteItem(_ index: Int) {
-        guard let itemName = AppShoppingCart.shared.items[index].itemName else { return }
+        //Used before:
+        //guard let itemName = AppShoppingCart.shared.items[index].itemName else { return }
+        //Now with Crashlytics:
+        guard let itemName = AppShoppingCart.shared.items[index].itemName else { Crashlytics.crashlytics().log("There is no itemName")
+            return
+        }
+        
         let shoppingCartFactory = requestFactory.makeShoppingCartRequestFactory()
 
         let request = ShoppingCartRequest(itemId: index, quantity: 1)
@@ -88,11 +98,11 @@ extension ShoppingCartTableViewController: ShoppingCartTableViewCellProtocol {
 
         alert.addAction(UIAlertAction(title: "Nope", style: .default, handler: nil))
 
-        shoppingCartFactory.deleteFromShoppingCart(shoppingCart: request)  { response in
+        shoppingCartFactory.deleteFromShoppingCart(shoppingCart: request)  { [weak self] response in
             switch response.result {
             case .success:
                 DispatchQueue.main.async {
-                    self.present(alert, animated: true, completion: nil)
+                    self?.present(alert, animated: true, completion: nil)
                 }
             case .failure(let error): print(error.localizedDescription)
             }
@@ -112,13 +122,13 @@ extension ShoppingCartTableViewController: ShoppingCartFooterTableViewCellProtoc
                 self.tabBarController?.selectedIndex = 0
             }
         }))
-        shoppingCartFactory.payForShoppingCart(user: user) { response in
+        shoppingCartFactory.payForShoppingCart(user: user) { [weak self] response in
             switch response.result {
             case .success:
                 DispatchQueue.main.async {
-                    self.present(alert, animated: true, completion: {
+                    self?.present(alert, animated: true, completion: {
                          AppShoppingCart.shared.items = []
-                         self.tableView.reloadData()
+                         self?.tableView.reloadData()
                     })
                 }
             case .failure(let error): print(error.localizedDescription)

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 protocol GetUserDataViewProtocol: AnyObject {
      func pressSaveButton(user: User)
@@ -446,7 +447,12 @@ class GetUserDataView: UIView {
      }
 
      @objc func keyboardWillShow(notification: NSNotification) {
-         guard let userInfo = notification.userInfo else { return }
+         //This was before:
+         //guard let userInfo = notification.userInfo else { return }
+         //Now with Crashlytics:
+         guard let userInfo = notification.userInfo else { Crashlytics.crashlytics().log("noInformationAboutThisUser")
+             return
+         }
 
          var keyboardFrame: CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
          var contentInset: UIEdgeInsets = self.scrollView.contentInset
