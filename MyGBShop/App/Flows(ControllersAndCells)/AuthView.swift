@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 protocol AuthViewProtocol: AnyObject {
     func pressLoginButton(userName: String, password: String)
@@ -210,7 +211,13 @@ class AuthView: UIView {
      }
 
      @objc func keyboardWillShow(notification: NSNotification) {
-         guard let userInfo = notification.userInfo else { return }
+         
+         //Before:
+         //guard let userInfo = notification.userInfo else { return }
+         //Now using Crashlytics:
+         guard let userInfo = notification.userInfo else { Crashlytics.crashlytics().log("userInformationDoesNotExist")
+             return
+         }
 
          var keyboardFrame: CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
          var contentInset: UIEdgeInsets = self.scrollView.contentInset

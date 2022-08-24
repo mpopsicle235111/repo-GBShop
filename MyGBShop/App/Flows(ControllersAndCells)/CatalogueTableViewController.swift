@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
  class CatalogueTableViewController: UITableViewController {
 
@@ -18,6 +19,11 @@ import UIKit
          tableView.dataSource = self
          tableView.delegate = self
          getCatalogue(pageNumber: 1, categoryNumber: 1)
+         
+         //Added for Crashlytics
+         GALogger.logEvent(name: "catalogueViewed", key: "ResultIs", value: "Success")
+         
+         
      }
 
      override func viewWillAppear(_ animated: Bool) {
@@ -52,13 +58,13 @@ import UIKit
          let catalogue = requestFactory.makeGetCatalogueRequestFactory()
 
          catalogue.getCatalogue(pageNumber: pageNumber,
-                            categoryNumber: categoryNumber) { response in
+                            categoryNumber: categoryNumber) { [weak self] response in
              switch response.result {
              case .success(let result):
-                 self.catalogue = result
+                 self?.catalogue = result
                  print(result)
                  DispatchQueue.main.async {
-                     self.tableView.reloadData()
+                     self?.tableView.reloadData()
                  }
              case .failure(let error):
                  print(error.localizedDescription)
@@ -67,7 +73,14 @@ import UIKit
      }
      
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-              let itemId = catalogue.items[indexPath.row].itemId ?? 0
+              //Used before:
+              //let itemId = catalogue.items[indexPath.row].itemId ?? 0
+              //Now with Crashlytics:
+         guard let itemId = catalogue.items[indexPath.row].itemId else {
+             Crashlytics.crashlytics().log("itemIdDoesNotExist")
+             return
+         }
+              
 
               navigationController?.pushViewController(ItemCardViewController(productIdNumber: itemId), animated: true)
           }

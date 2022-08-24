@@ -60,14 +60,14 @@ class GetUserDataViewController: UIViewController {
                                       handler: {action in
             let changeUserData = self.requestFactory.makeСhangeUserDataFactory()
 
-            changeUserData.changeUserData(user: user) {response in
+            changeUserData.changeUserData(user: user) { [weak self] response in
                 DispatchQueue.main.async {
                     switch response.result {
                     case .success(let result):
-                        result.result == 1 ? self.savePopUpConfirmation() : self.displayErrorMessage(result.errorMessage ?? "Unknown Error")
+                        result.result == 1 ? self?.savePopUpConfirmation() : self?.displayErrorMessage(result.errorMessage ?? "Unknown Error")
                         print(result)
                     case .failure(let error):
-                        self.displayErrorMessage(error.localizedDescription)
+                        self?.displayErrorMessage(error.localizedDescription)
                         print(error.localizedDescription)
                     }
                 }
@@ -100,14 +100,14 @@ class GetUserDataViewController: UIViewController {
                                       style: .cancel,
                                       handler: {action in
             let auth = self.requestFactory.makeAuthRequestFactory()
-             auth.logout(userID: user.id ?? 0) { response in
+             auth.logout(userID: user.id ?? 0) { [weak self] response in
                  DispatchQueue.main.async {
                      switch response.result {
                      case .success(let result):
-                         result.result == 1 ? self.logOut() : self.displayErrorMessage(result.errorMessage ?? "Unknown Error")
+                         result.result == 1 ? self?.logOut() : self?.displayErrorMessage(result.errorMessage ?? "Unknown Error")
                          print(result)
                      case .failure(let error):
-                         self.displayErrorMessage(error.localizedDescription)
+                         self?.displayErrorMessage(error.localizedDescription)
                          print(error.localizedDescription)
                      }
                 }

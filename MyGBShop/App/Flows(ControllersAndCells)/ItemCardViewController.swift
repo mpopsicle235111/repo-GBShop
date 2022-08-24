@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class ItemCardViewController: UIViewController {
 
@@ -42,14 +43,14 @@ class ItemCardViewController: UIViewController {
     }
 
     func getItem(itemId: Int) {
-        let ItemById = requestFactory.makeGetItemRequestFactory()
-        ItemById.getItem(productIdNumber: itemId) { response in
+        let itemById = requestFactory.makeGetItemRequestFactory()
+        itemById.getItem(productIdNumber: itemId) { [weak self] response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success(let result):
                     print(result)
-                    self.itemCardView.configure(result)
-                    self.item = result
+                    self?.itemCardView.configure(result)
+                    self?.item = result
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -80,10 +81,16 @@ extension ItemCardViewController: ItemCardViewProtocol {
         print("Item ID Is:")
         print(productIdNumber)
         print("====================")
-        guard let item = item else { return }
-                 let shoppingCart = requestFactory.makeShoppingCartRequestFactory()
-                 let shoppingCartRequest = ShoppingCartRequest(itemId: item.itemId ?? 0, quantity: 1)
-                 shoppingCart.addToShoppingCart(shoppingCart: shoppingCartRequest) { response in
+        //Was used before:
+        //guard let item = item else { return }
+        //Now with Crashlytics:
+        guard let item = item else { Crashlytics.crashlytics().log("thereIsNoItem")
+            return
+        }
+        let shoppingCart = requestFactory.makeShoppingCartRequestFactory()
+        let shoppingCartRequest = ShoppingCartRequest(itemId: item.itemId ?? 0, quantity: 1)
+        
+        shoppingCart.addToShoppingCart(shoppingCart: shoppingCartRequest) { [weak self] response in
                      switch response.result {
                      case .success:
                          DispatchQueue.main.async {
@@ -92,7 +99,10 @@ extension ItemCardViewController: ItemCardViewProtocol {
                                                       price: item.price,
                                                       picUrl: item.picUrl)
                              AppShoppingCart.shared.items.append(item)
-                             self.showAddToShoppingCartSuccessAlert()
+                             
+                             //Added for Crashlytics:
+                             GALogger.logEvent(name: "itemAddedToCart", key: "ResultIs", value: "Success")
+                             self?.showAddToShoppingCartSuccessAlert()
                          }
                      case .failure(let error):
                          print(error.localizedDescription)

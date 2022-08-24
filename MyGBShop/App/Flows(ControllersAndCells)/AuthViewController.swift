@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class AuthViewController: UIViewController {
 
@@ -35,6 +36,10 @@ class AuthViewController: UIViewController {
 
      
     private func displayErrorMessage(_ errorMessage: String) {
+        
+        //Added to collect Crashlytics
+        GALogger.logEvent(name: "userIsLoggedIn", key: "ResultIs", value: "loginFailure")
+        
         let alert = UIAlertController(title: "Authorization Error!",
                                        message: errorMessage,
                                        preferredStyle: .alert)
@@ -45,6 +50,10 @@ class AuthViewController: UIViewController {
     }
 
     private func goToMainScreen() {
+        
+        //Added to collect Crashlytics
+        GALogger.logEvent(name: "userIsLoggedIn", key: "ResultIs", value: "loginSuccess")
+        
         navigationController?.pushViewController(TabBarViewController(), animated: true)
     }
 
@@ -55,14 +64,14 @@ extension AuthViewController: AuthViewProtocol {
 
     func pressLoginButton(userName: String, password: String) {
         let auth = requestFactory.makeAuthRequestFactory()
-        auth.login(userName: userName, password: password) { response in
+        auth.login(userName: userName, password: password) { [weak self] response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success(let result):
-                    result.result == 1 ? self.goToMainScreen() : self.displayErrorMessage(result.errorMessage ?? "Undefined Error!")
+                    result.result == 1 ? self?.goToMainScreen() : self?.displayErrorMessage(result.errorMessage ?? "Undefined Error!")
                     print(result)
                 case .failure(let error):
-                    self.displayErrorMessage(error.localizedDescription)
+                    self?.displayErrorMessage(error.localizedDescription)
                     print(error.localizedDescription)
                 }
             }

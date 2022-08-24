@@ -58,14 +58,14 @@ class AddFeedbackViewController: UIViewController {
 extension AddFeedbackViewController: AddFeedbackViewProtocol {
     func pressSaveFeedbackButton(feedbackResult: FeedbackResult) {
         let feedback = requestFactory.makeFeedbackRequestFactory()
-        feedback.addFeedback(feedback: feedbackResult) { response in
+        feedback.addFeedback(feedback: feedbackResult) { [weak self] response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success(let result):
-                    result.result == 1 ? self.goToMainScreen(message: result.successMessage ?? "") : self.displayErrorMessage(result.errorMessage ?? "Undefined error.")
+                    result.result == 1 ? self?.goToMainScreen(message: result.successMessage ?? "") : self?.displayErrorMessage(result.errorMessage ?? "Undefined error.")
                     print(result)
                 case .failure(let error):
-                    self.displayErrorMessage(error.localizedDescription)
+                    self?.displayErrorMessage(error.localizedDescription)
                     print(error.localizedDescription)
                 }
             }
