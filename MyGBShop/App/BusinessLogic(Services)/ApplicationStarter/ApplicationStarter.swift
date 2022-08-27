@@ -17,7 +17,7 @@ final class ApplicationStarter {
 
     func startApplication() {
         let rootVC = AuthViewController()
-        rootVC.navigationItem.title = "MyGBShop v.11.0"
+        rootVC.navigationItem.title = "MyGBShop v.12 (Fastlane CI)"
 
         let navVC = self.configuredNavigationController
         navVC.viewControllers = [rootVC]
