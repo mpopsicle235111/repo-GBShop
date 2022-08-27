@@ -31,7 +31,7 @@ class AuthView: UIView {
 
     private(set) lazy var loginTextField: UITextField = {
         let textField = UITextField()
-        textField.borderStyle = .line
+        textField.borderStyle = .bezel
         textField.attributedPlaceholder = NSAttributedString(string: "Login: Jack007", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         textField.textColor = .black
         textField.font = UIFont(name: "Helvetica", size: 22)
@@ -46,7 +46,7 @@ class AuthView: UIView {
         textField.textColor = .black
         textField.font = UIFont(name: "Helvetica", size: 22)
         textField.attributedPlaceholder = NSAttributedString(string: "Password: sourCream2!", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.borderStyle = .line
+        textField.borderStyle = .bezel
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
 

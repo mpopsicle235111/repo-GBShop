@@ -185,7 +185,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        print(error.localizedDescription)
         //    }
         //}
-
+        
+        //Added for Fastlane CI (Continuous Integration)
+        //Schemes added as per: iOSCoderAdhimanyuDaspan
+        //https://www.youtube.com/watch?v=W0uQd6QdnG0
+        //  The idea here is to provide a different environment
+        //  (Heroku Vapor Server address)
+        //  to QA, LOCAL, PROD, DEMO and DEV
+        //  via the ServerConfig class
+        ServerConfig.shared.setUpServerConfig()
+        
         
         return true
     }

@@ -8,79 +8,79 @@
 import Foundation
 import Alamofire
 
- class ShoppingCart: AbstractRequestFactory {
-     let errorParser: AbstractErrorParser
-     let sessionManager: Session
-     let queue: DispatchQueue
-     let baseUrl = URL(string: "https://tranquil-headland-91171.herokuapp.com/")!
+class ShoppingCart: AbstractRequestFactory {
+    let errorParser: AbstractErrorParser
+    let sessionManager: Session
+    let queue: DispatchQueue
+    let baseUrl = URL(string: "https://tranquil-headland-91171.herokuapp.com/")!
 
-     init (
-         errorParser: AbstractErrorParser,
-         sessinManager: Session,
-         queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
-             self.errorParser = errorParser
-             self.sessionManager = sessinManager
-             self.queue = queue
-         }
- }
+    init (
+        errorParser: AbstractErrorParser,
+        sessinManager: Session,
+        queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
+            self.errorParser = errorParser
+            self.sessionManager = sessinManager
+            self.queue = queue
+        }
+}
 
- extension ShoppingCart: ShoppingCartRequestFactory {
-     func getShoppingCart(user: User, completionHandler: @escaping (AFDataResponse<ShoppingCartResult>) -> Void) {
-         let requestModel = GetShoppingCart(baseURL: baseUrl, userId: user.id ?? 0)
-         self.request(request: requestModel,
+extension ShoppingCart: ShoppingCartRequestFactory {
+    func getShoppingCart(user: User, completionHandler: @escaping (AFDataResponse<ShoppingCartResult>) -> Void) {
+        let requestModel = GetShoppingCart(baseURL: baseUrl, userId: user.id ?? 0)
+        self.request(request: requestModel,
                       completionHandler: completionHandler)
-     }
+    }
 
-     func payForShoppingCart(user: User, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
-         let requestModel = PayForShoppingCart(baseURL: baseUrl, userId: user.id ?? 0)
-         self.request(request: requestModel,
+    func payForShoppingCart(user: User, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
+        let requestModel = PayForShoppingCart(baseURL: baseUrl, userId: user.id ?? 0)
+        self.request(request: requestModel,
                       completionHandler: completionHandler)
-     }
+    }
 
-     func addToShoppingCart(shoppingCart: ShoppingCartRequest, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
-         let requestModel = AddToShoppingCart(baseURL: baseUrl, shoppingCart: shoppingCart)
-         self.request(request: requestModel,
+    func addToShoppingCart(shoppingCart: ShoppingCartRequest, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
+        let requestModel = AddToShoppingCart(baseURL: baseUrl, shoppingCart: shoppingCart)
+        self.request(request: requestModel,
                       completionHandler: completionHandler)
-     }
+    }
 
-     func deleteFromShoppingCart(shoppingCart: ShoppingCartRequest, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
-         let requestModel = DeleteFromShoppingCart(baseURL: baseUrl, shoppingCart: shoppingCart)
-         self.request(request: requestModel,
+    func deleteFromShoppingCart(shoppingCart: ShoppingCartRequest, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
+        let requestModel = DeleteFromShoppingCart(baseURL: baseUrl, shoppingCart: shoppingCart)
+        self.request(request: requestModel,
                       completionHandler: completionHandler)
-     }
+    }
 
 
- }
+}
 
- extension ShoppingCart {
-     struct GetShoppingCart: RequestRouter {
-         let baseURL: URL
-         let method: HTTPMethod = .post
-         let path: String = "getShoppingCart.json"
-         let userId: Int
+extension ShoppingCart {
+    struct GetShoppingCart: RequestRouter {
+        let baseURL: URL
+        let method: HTTPMethod = .post
+        let path: String = "getShoppingCart.json"
+        let userId: Int
 
-         var parameters: Parameters? {
-             return [
-                 "userId": userId
-             ]
-         }
-     }
- }
+        var parameters: Parameters? {
+            return [
+                "userId": userId
+            ]
+        }
+    }
+}
 
- extension ShoppingCart {
-     struct PayForShoppingCart: RequestRouter {
-         let baseURL: URL
-         let method: HTTPMethod = .post
-         let path: String = "payForShoppingCart.json"
-         let userId: Int
+extension ShoppingCart {
+    struct PayForShoppingCart: RequestRouter {
+        let baseURL: URL
+        let method: HTTPMethod = .post
+        let path: String = "payForShoppingCart.json"
+        let userId: Int
 
-         var parameters: Parameters? {
-             return [
-                 "userId": userId
-             ]
-         }
-     }
- }
+        var parameters: Parameters? {
+            return [
+                "userId": userId
+            ]
+        }
+    }
+}
 
  extension ShoppingCart {
      struct AddToShoppingCart: RequestRouter {
